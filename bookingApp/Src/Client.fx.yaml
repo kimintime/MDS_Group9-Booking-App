@@ -1,0 +1,165 @@
+"Client As screen.'phoneBrowseLayout_ver3.0'":
+    OnVisible: |
+        =Set(globalProductTitle, DataCardValue1_1.Text)
+
+    "BrowseGallery1_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageTwoColumnOverlayVariant_ver4.0'":
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =866
+        Items: =SortByColumns(Filter([@Equipment], StartsWith(Title, TextSearchBox.Text)), "Title", If(SortDescending1, SortOrder.Descending, SortOrder.Ascending))
+        Layout: =Layout.Vertical
+        OnSelect: =Navigate(DetailScreen_Client, ScreenTransition.None)
+        ShowScrollbar: =false
+        TemplatePadding: =4
+        TemplateSize: =Min(320, Self.Height - 60)
+        Width: =Parent.Width
+        WrapCount: =2
+        Y: =152
+        ZIndex: =1
+
+        Image6_1 As image:
+            Height: =Parent.TemplateHeight
+            Image: =ThisItem.Image
+            ImagePosition: =ImagePosition.Fill
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            ZIndex: =1
+
+        Overlay2_1 As rectangle:
+            Height: =108
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 108
+            ZIndex: =2
+
+        Title5_1 As label:
+            Height: =26
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =14
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =291
+            X: =12
+            Y: =255
+            ZIndex: =3
+
+    navbar_6 As navbar:
+        ZIndex: =9
+
+    Container1_4 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =118
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =2
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Width: =640
+        Y: =1018
+        ZIndex: =15
+
+        Icon17_4 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Home
+            OnSelect: |-
+                =Switch(
+                   true, 
+                   isAdminList, Navigate(Admin) ,
+                   Navigate(Client)
+                )
+            Tooltip: ="Catalogue"
+            ZIndex: =1
+
+        Icon18_4 As icon.CalendarBlank:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.CalendarBlank
+            OnSelect: =Navigate(OwnBookings)
+            Tooltip: ="Bookings"
+            ZIndex: =2
+
+        Icon19_4 As icon.Person:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Person
+            OnSelect: =Navigate(StartingPage)
+            Tooltip: ="Profile"
+            ZIndex: =3
+
+    searchBar_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =20
+        ZIndex: =15
+
+        TextSearchBox As text:
+            Align: =TextPosition.Left
+            Default: =""
+            DelayOutput: =true
+            Height: =72
+            HintText: ="Search items"
+            PaddingLeft: =70
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =7
+            RadiusTopLeft: =0
+            RadiusTopRight: =7
+            Size: =21
+            Width: =640
+            Y: =80
+            ZIndex: =10
+
+        IconRefresh1_2 As icon.Reload:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(0, 0, 0, 1)
+            Height: =66
+            Icon: =Icon.Reload
+            OnSelect: =Refresh([@Equipment])
+            PaddingBottom: =10
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: |
+                =10
+            TabIndex: =0
+            Tooltip: ="Refresh list"
+            Width: =75
+            X: =490
+            Y: =82
+            ZIndex: =11
+
+        IconSortUpDown1_2 As icon.ArrowsUpDown:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(0, 0, 0, 1)
+            Height: =66
+            Icon: =Icon.Sort
+            OnSelect: |-
+                =UpdateContext({SortDescending1: !SortDescending1})
+            PaddingBottom: =10
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: |
+                =10
+            TabIndex: =0
+            Tooltip: =If(SortDescending1, "Sort list in reverse alphabetical order", "Sort list in alphabetical order")
+            Width: =75
+            X: =565
+            Y: =82
+            ZIndex: =12
+
+        SearchIcon1_2 As icon.Search:
+            Color: =RGBA(191, 190, 190, 1)
+            Height: =72
+            Icon: =Icon.Search
+            PaddingBottom: =14
+            PaddingLeft: =14
+            PaddingRight: =14
+            PaddingTop: =14
+            Tooltip: ="Search"
+            Width: =68
+            X: =TextSearchBox.X
+            Y: =80
+            ZIndex: =14
+

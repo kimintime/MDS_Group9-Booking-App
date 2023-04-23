@@ -1,0 +1,49 @@
+Component1_1 As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =640
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Image1_1 As image:
+        Height: =224
+        Width: =320
+        X: =144
+        Y: =93
+        ZIndex: =1
+
+    Rectangle1_1 As rectangle:
+        Height: =180
+        Width: =609
+        X: =15
+        Y: =317
+        ZIndex: =2
+
+    Label2_2 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =130
+        Size: =40
+        Text: ="Browse Items"
+        Width: =560
+        X: =50
+        Y: =342
+        ZIndex: =3
+
+    Rectangle2_1 As rectangle:
+        Height: =143
+        Width: =609
+        X: =15
+        Y: =497
+        ZIndex: =4
+
+    Label2_3 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =130
+        Size: =40
+        Text: ="Manage your bookings"
+        Width: =560
+        X: =50
+        Y: =503
+        ZIndex: =5
+

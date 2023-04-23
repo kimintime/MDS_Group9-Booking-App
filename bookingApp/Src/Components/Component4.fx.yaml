@@ -1,0 +1,17 @@
+Component4 As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =640
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Button2 As button:
+        Height: =70
+        Size: =24
+        Text: ="Available"
+        Width: =280
+        X: =180
+        Y: =284
+        ZIndex: =1
+

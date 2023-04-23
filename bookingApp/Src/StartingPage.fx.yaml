@@ -1,0 +1,102 @@
+StartingPage As screen:
+
+    Image1 As image:
+        Height: =320
+        Image: =Laurea_DigitalLivingLab
+        Width: =320
+        X: =159
+        Y: =142
+        ZIndex: =2
+
+    Rectangle2_2 As rectangle:
+        Fill: =RGBA(241, 244, 249, 1)
+        Height: =186
+        OnSelect: |-
+            =Switch(
+               true, 
+               isAdminList, Navigate(Admin) ,
+               Navigate(Client)
+            )
+        Tooltip: ="Click here to open the app"
+        Width: =573
+        X: =32
+        Y: =544
+        ZIndex: =7
+
+    Image3_1 As image:
+        Height: =102
+        Image: =User().Image
+        OnSelect: |-
+            =Switch(
+               true, 
+               isAdminList, Navigate(Admin) ,
+               Navigate(Client)
+            )
+        RadiusBottomLeft: =50
+        RadiusBottomRight: =50
+        RadiusTopLeft: =50
+        RadiusTopRight: =50
+        Width: =98
+        X: =75
+        Y: =586
+        ZIndex: =8
+
+    Label12_1 As label:
+        Height: =70
+        OnSelect: |-
+            =Switch(
+               true, 
+               isAdminList, Navigate(Admin) ,
+               Navigate(Client)
+            )
+        Size: =21
+        Text: =User().FullName
+        Width: =440
+        X: =200
+        Y: =602
+        ZIndex: =9
+
+    Label15_1 As label:
+        Height: =70
+        Size: =21
+        Text: ="Welcome!"
+        Width: =560
+        X: =32
+        Y: =406
+        ZIndex: =10
+
+    Label16_1 As label:
+        Height: =70
+        Size: =21
+        Text: ="Select account to proceed"
+        Width: =560
+        X: =32
+        Y: =462
+        ZIndex: =11
+
+    Label17_1 As label:
+        Height: =70
+        Size: =21
+        Text: ="Not you? Please log off from Office 365 account and try again."
+        Width: =560
+        X: =32
+        Y: =768
+        ZIndex: =12
+
+    navbar_12 As navbar:
+        ZIndex: =13
+
+    Button5 As button:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =70
+        HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
+        OnSelect: |-
+            =Launch("https://login.microsoftonline.com/common/oauth2/logout");
+        PressedFill: =RGBA(240, 120, 170, 1)
+        Size: =24
+        Text: ="Logout"
+        Width: =280
+        X: =172
+        Y: =907
+        ZIndex: =14
+

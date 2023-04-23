@@ -1,0 +1,413 @@
+"DetailScreen_Admin As screen.'phoneDetailViewLayout_ver3.0'":
+    OnVisible: |+
+        =Set(globalProductTitle, DataCardValue1.Text)
+        
+
+    DetailForm1 As formViewer:
+        DataSource: =[@Equipment]
+        Height: =706
+        Item: =BrowseGallery1.Selected
+        Width: =Parent.Width
+        Y: =80
+        ZIndex: =1
+
+        Title_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Title
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"Title")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =74
+            Required: =true
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Visible: =false
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =12
+                Y: =17
+                ZIndex: =2
+
+        Image_DataCard1 As typedDataCard.largeImageViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Image"
+            Default: =ThisItem.Image
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"Image")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey2 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Visible: =false
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue2 As image:
+                DisplayMode: =Parent.DisplayMode
+                Height: =320
+                Image: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =33
+                ZIndex: =2
+
+        "'Website/Manual_DataCard1' As typedDataCard.urlViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Website"
+            Default: =ThisItem.'Website/Manual'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"Website")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey4 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue4 As htmlViewer:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =45
+                HtmlText: ="<a href='" & Parent.Default & "'>" & Parent.Default & "</a>"
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                ZIndex: =2
+
+        Description_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Longdescription"
+            Default: =ThisItem.Description
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"Longdescription")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            WidthFit: =true
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey3 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Bold
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue3 As label:
+                DisplayMode: =Parent.DisplayMode
+                Height: =1546
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                VerticalAlign: =VerticalAlign.Top
+                Width: =580
+                X: =30
+                Y: =58
+                ZIndex: =2
+
+    navbar_4 As navbar:
+        ZIndex: =2
+
+    IconBackarrow1 As icon.ChevronLeft:
+        AccessibleLabel: =Self.Tooltip
+        Height: =44
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(Admin, ScreenTransition.None)
+        TabIndex: =0
+        Tooltip: ="Back to list"
+        Width: =60
+        X: =470
+        Y: =18
+        ZIndex: =3
+
+    Container1_5 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =118
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =2
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Width: =640
+        Y: =1018
+        ZIndex: =4
+
+        Icon17_5 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Home
+            OnSelect: |-
+                =Switch(
+                   true, 
+                   isAdminList, Navigate(Admin) ,
+                   Navigate(Client)
+                )
+            Tooltip: ="Catalogue"
+            ZIndex: =1
+
+        Icon18_5 As icon.CalendarBlank:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.CalendarBlank
+            OnSelect: =Navigate(OwnBookings)
+            Tooltip: ="Bookings"
+            ZIndex: =2
+
+        Icon19_5 As icon.Person:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Person
+            OnSelect: =Navigate(StartingPage)
+            Tooltip: ="Profile"
+            ZIndex: =3
+
+    isAvailableForm As form:
+        DataSource: =Equipment
+        Height: =193
+        Item: =BrowseGallery1.Selected
+        Width: =310
+        X: =14
+        Y: =786
+        ZIndex: =7
+
+        isAvailable_DataCard4 As typedDataCard.yesNoRadioEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="isAvailable"
+            Default: =ThisItem.isAvailable
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@Equipment],DataSourceInfo.DisplayName,"isAvailable")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =134
+            Required: =true
+            Update: =DataCardValue11.Selected.Value = "Yes"
+            Width: =310
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey14 As label:
+                AutoHeight: =true
+                FontWeight: =FontWeight.Semibold
+                Height: =48
+                Size: =20
+                Text: |-
+                    ="Set item availability:"
+                Width: =280
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue11 As radio:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =If(Parent.Default, "Yes", "No")
+                DisplayMode: =Parent.DisplayMode
+                Height: =104
+                Items: =["Yes", "No"]
+                PaddingBottom: =0
+                PaddingTop: =0
+                RadioSize: =50
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =143
+                X: =If(Self.RadioSize = 20, 18, Self.Height = 70, 12, 14)
+                Y: =DataCardKey14.Y + DataCardKey14.Height + 5
+                ZIndex: =2
+
+            ErrorMessage10 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue11.Y + DataCardValue11.Height
+                ZIndex: =3
+
+            StarVisible10 As label:
+                Align: =Align.Center
+                Height: =DataCardKey14.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey14.Y
+                ZIndex: =4
+
+    Icon5 As icon.Check:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =70
+        HoverBorderColor: =ColorFade(RGBA(240, 120, 170, 100), -20%)
+        HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
+        Icon: =Icon.Check
+        OnSelect: =SubmitForm(isAvailableForm)
+        Width: =70
+        X: =177
+        Y: =862
+        ZIndex: =8
+
+    Label8 As label:
+        Align: =Align.Right
+        Height: =70
+        Size: =21
+        Text: |
+            =If(Button6_1.Text = "Unavailable", "Date Due: " & Text(LookUp(bookings, Title = DataCardValue1.Text, 'End Date'), "dd/mm/yyyy"), "")
+        Width: =316
+        X: =8
+        Y: =957
+        ZIndex: =9
+
+    IconEdit1 As icon.Edit:
+        AccessibleLabel: =Self.Tooltip
+        Color: =RGBA(0, 0, 0, 1)
+        DisplayMode: =If(DataSourceInfo([@Equipment], DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =88
+        Icon: =Icon.Edit
+        OnSelect: |+
+            =EditForm(EditForm1);Navigate(EditScreen1, ScreenTransition.None)
+            
+            
+            
+            
+            
+            
+            
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Edit this item"
+        Width: =88
+        X: =402
+        Y: =853
+        ZIndex: =10
+
+    IconDelete1 As icon.Trash:
+        AccessibleLabel: =Self.Tooltip
+        Color: =RGBA(184, 0, 0, 1)
+        DisplayMode: =If(!IsBlank(BrowseGallery1.Selected) && DataSourceInfo([@Equipment], DataSourceInfo.DeletePermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =88
+        Icon: =Icon.Trash
+        OnSelect: =Remove([@Equipment], BrowseGallery1.Selected); If (IsEmpty(Errors([@Equipment], BrowseGallery1.Selected)), Back())
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Delete this item"
+        Width: =88
+        X: =470
+        Y: =853
+        ZIndex: =11
+
+    "'Status bar_1' As group":
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =20
+        ZIndex: =15
+
+        Rectangle5_1 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Width: =640
+            Y: =938
+            ZIndex: =5
+
+        Button6_1 As button:
+            Fill: =RGBA(240, 120, 170, 1)
+            Height: =61
+            HoverFill: =ColorFade(RGBA(0, 174, 239, 100), -20%)
+            OnSelect: =
+            Size: =24
+            Text: |
+                =If(LookUp(Equipment, Title = DataCardValue1.Text).isAvailable, "Available", "Unavailable")
+            Width: =249
+            X: =354
+            Y: =957
+            ZIndex: =6
+
+        Button1_4 As button:
+            Fill: =RGBA(0, 174, 239, 1)
+            Height: =61
+            HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
+            OnSelect: |-
+                =Set(globalClientValue, DataCardValue1.Text);
+                Navigate(Calendar, ScreenTransition.None)
+            Size: =24
+            Text: ="Book"
+            Visible: =LookUp(Equipment, Title = DataCardValue1.Text).isAvailable = true
+            Width: =178
+            X: =39
+            Y: =957
+            ZIndex: =12
+

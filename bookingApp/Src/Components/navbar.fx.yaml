@@ -1,0 +1,52 @@
+navbar As CanvasComponent:
+    Fill: =RGBA(0, 174, 239, 1)
+    Height: =80
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    "'nav items' As groupContainer.horizontalAutoLayoutContainer":
+        Height: =80
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =10
+        LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+        LayoutMode: =LayoutMode.Auto
+        PaddingLeft: =20
+        PaddingRight: =20
+        Width: =640
+        ZIndex: =1
+
+        butttons As groupContainer.horizontalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =0.7
+            Height: =100
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutGap: =10
+            LayoutMinHeight: =0
+            LayoutMinWidth: =0
+            LayoutMode: =LayoutMode.Auto
+            Width: =250
+            ZIndex: =1
+
+            Image5 As image:
+                Height: =80
+                Image: =neliotunnus_laurea_rgb
+                LayoutMinHeight: =320
+                LayoutMinWidth: =320
+                Width: =80
+                ZIndex: =1
+
+        Image4 As image:
+            Height: =80
+            Image: =User().Image
+            LayoutMinHeight: =320
+            LayoutMinWidth: =320
+            OnSelect: =Navigate(StartingPage)
+            RadiusBottomLeft: =45
+            RadiusBottomRight: =45
+            RadiusTopLeft: =45
+            RadiusTopRight: =45
+            Width: =80
+            ZIndex: =3
+

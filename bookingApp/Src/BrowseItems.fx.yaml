@@ -1,0 +1,69 @@
+BrowseItems As screen:
+
+    navbar_10 As navbar:
+
+    Button3 As button:
+        Fill: =RGBA(0, 159, 218, 1)
+        Height: =70
+        HoverFill: =ColorFade(RGBA(243, 192, 236,1), -20%)
+        OnSelect: =Navigate(Client, ScreenTransition.None)
+        Size: =24
+        Text: ="Browse items"
+        Width: =280
+        X: =180
+        Y: =718
+        ZIndex: =3
+
+    Label3 As label:
+        Align: =Align.Center
+        Height: =187
+        Size: =21
+        Text: |-
+            ="You have no reservations!
+            
+            Please use the catalogue to book items."
+        Width: =560
+        X: =40
+        Y: =320
+        ZIndex: =4
+
+    Container1_2 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =118
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =2
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Width: =640
+        Y: =1018
+        ZIndex: =5
+
+        Icon17_2 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Home
+            OnSelect: |-
+                =Switch(
+                   true, 
+                   isAdminList, Navigate(Admin) ,
+                   Navigate(Client)
+                )
+            Tooltip: ="Catalogue"
+            ZIndex: =1
+
+        Icon18_2 As icon.CalendarBlank:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.CalendarBlank
+            OnSelect: =Navigate(OwnBookings)
+            Tooltip: ="Bookings"
+            ZIndex: =2
+
+        Icon19_2 As icon.Person:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Person
+            OnSelect: =Navigate(StartingPage)
+            Tooltip: ="Profile"
+            ZIndex: =3
+

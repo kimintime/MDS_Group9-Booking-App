@@ -1,0 +1,105 @@
+Component3 As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =640
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =2
+
+    Button3_8 As button:
+        Height: =63
+        Size: =24
+        Text: ="Edit"
+        Width: =133
+        X: =480
+        Y: =134
+        ZIndex: =1
+
+    Button3_9 As button:
+        Height: =63
+        Size: =24
+        Text: ="Edit"
+        Width: =133
+        X: =480
+        Y: =277
+        ZIndex: =2
+
+    Button3_10 As button:
+        Height: =63
+        Size: =24
+        Text: ="Edit"
+        Width: =133
+        X: =480
+        Y: =440
+        ZIndex: =3
+
+    Button3_11 As button:
+        Height: =63
+        Size: =24
+        Text: ="Edit"
+        Width: =133
+        X: =480
+        Y: =577
+        ZIndex: =4
+
+    TextInput1_1 As text:
+        Default: ="Tekstisyöte"
+        Height: =49
+        Size: =21
+        Width: =386
+        X: =26
+        Y: =178
+        ZIndex: =5
+
+    "Gallery4_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =638
+        Items: =CustomGallerySample
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =Min(160, Self.Height - 60)
+        Y: =2
+        ZIndex: =6
+
+        Image5_3 As image:
+            Height: =128
+            OnSelect: =Select(Parent)
+            Width: =128
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title4_3 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.SampleHeading
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image5_3.Width - 104
+            X: =Image5_3.X + Image5_3.Width + 24
+            Y: =44
+            ZIndex: =2
+
+        Subtitle4_3 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.SampleText
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title4_3.Width
+            X: =Title4_3.X
+            Y: =Title4_3.Y + Title4_3.Height + 4
+            ZIndex: =3
+
+        Separator4_3 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+

@@ -1,0 +1,104 @@
+"GreatSuccess As screen.'phoneLayout_Success_ver3.0'":
+
+    iconCircle1 As circle.Circle:
+        X: =Parent.Width/2 - Self.Width/2
+        Y: =(Parent.Height/2 - Self.Height/2) * .7
+        ZIndex: =1
+
+    iconCheck1 As icon.Check:
+        Fill: =RGBA(0, 159, 218, 1)
+        Height: =iconCircle1.Height
+        HoverFill: =RGBA(240, 120, 170, 1)
+        Icon: =Icon.Check
+        PaddingBottom: =Self.PaddingTop
+        PaddingLeft: =Self.PaddingTop
+        PaddingRight: =Self.PaddingTop
+        PaddingTop: =18
+        Width: =iconCircle1.Width
+        X: =Parent.Width/2 - Self.Width/2
+        Y: =(Parent.Height/2 - Self.Height/2) * .7
+        ZIndex: =2
+
+    LblSuccessMsg1 As label:
+        Align: =Align.Center
+        AutoHeight: =true
+        Height: =iconCircle1.Height
+        Size: =21
+        Text: |-
+            ="Thank you for your reservation!
+            
+            Redirect to Bookings in 3 seconds."
+        Width: =Parent.Width * 0.75
+        X: =Parent.Width/2 - Self.Width/2
+        Y: =iconCheck1.Y + iconCheck1.Height + 100
+        ZIndex: =3
+
+    navbar_8 As navbar:
+        ZIndex: =4
+
+    Container1_8 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =118
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =2
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Width: =640
+        Y: =1018
+        ZIndex: =5
+
+        Icon17_8 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Home
+            OnSelect: |-
+                =Switch(
+                   true, 
+                   isAdminList, Navigate(Admin) ,
+                   Navigate(Client)
+                )
+            Tooltip: ="Catalogue"
+            ZIndex: =1
+
+        Icon18_8 As icon.CalendarBlank:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.CalendarBlank
+            OnSelect: =Navigate(OwnBookings)
+            Tooltip: ="Bookings"
+            ZIndex: =2
+
+        Icon19_8 As icon.Person:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Person
+            OnSelect: =Navigate(StartingPage)
+            Tooltip: ="Profile"
+            ZIndex: =3
+
+    Timer1 As timer:
+        BorderThickness: =0
+        Color: =RGBA(0, 0, 0, 1)
+        Duration: =3000
+        Fill: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        HoverColor: =RGBA(0, 0, 0, 1)
+        OnTimerEnd: |-
+            =Switch(
+               true, 
+               isAdminList, Navigate(AdminBookings) ,
+               Navigate(OwnBookings)
+            );
+            Set(
+                startTimer,
+                false
+            )
+        Size: =30
+        Start: =startTimer
+        Text: =
+        Width: =280
+        X: =180
+        Y: =705
+        ZIndex: =6
+

@@ -1,0 +1,196 @@
+OwnBookings As screen:
+    Fill: =RGBA(255, 255, 255, 1)
+    OnVisible: =
+
+    navbar_9 As navbar:
+        ZIndex: =2
+
+    Label4 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =70
+        Size: =24
+        Text: ="My bookings"
+        Width: =282
+        X: =179
+        ZIndex: =3
+
+    "Gallery4_8 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =818
+        Items: |-
+            =Sort(
+            Filter(
+                bookings,
+                User.DisplayName = varUser.FullName
+            ),
+            'Start Date',
+            SortOrder.Descending
+            )
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =267
+        Y: =200
+        ZIndex: =5
+
+        Rectangle1_3 As rectangle:
+            Fill: =RGBA(241, 244, 249, 1)
+            Height: =242
+            OnSelect: =
+            Width: =594
+            X: =23
+            ZIndex: =2
+
+        Label1_2 As label:
+            Height: =97
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.Title
+            Width: =430
+            X: =161
+            ZIndex: =3
+
+        Label6_3 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.User.DisplayName
+            Width: =259
+            X: =260
+            Y: =97
+            ZIndex: =4
+
+        Label6_4 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.'Start Date'
+            Width: =259
+            X: =260
+            Y: =133
+            ZIndex: =5
+
+        Label6_9 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: =ThisItem.'End Date'
+            Width: =259
+            X: =260
+            Y: =166
+            ZIndex: =6
+
+        Label6_8 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: ="By"
+            Width: =99
+            X: =161
+            Y: =97
+            ZIndex: =7
+
+        Label6_10 As label:
+            Height: =54
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: ="From"
+            Width: =112
+            X: =161
+            Y: =133
+            ZIndex: =8
+
+        Label6_11 As label:
+            Height: =46
+            OnSelect: =Select(Parent)
+            Size: =21
+            Text: ="To"
+            Width: =112
+            X: =161
+            Y: =174
+            ZIndex: =9
+
+        Image3_2 As image:
+            Height: =116
+            Image: |-
+                =LookUp(
+                    Equipment,
+                    ThisItem.Title = Title
+                ).Image
+            OnSelect: =Select(Parent)
+            Width: =112
+            X: =34
+            Y: =35
+            ZIndex: =10
+
+    Button3_2 As button:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =57
+        HoverFill: =ColorFade(RGBA(240, 120, 170, 100), -20%)
+        OnSelect: =Navigate(AdminBookings, ScreenTransition.None)
+        Size: =24
+        Text: ="Admin bookings"
+        Visible: =isAdminList
+        Width: =282
+        X: =179
+        Y: =106
+        ZIndex: =6
+
+    Container1_9 As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(0, 174, 239, 1)
+        Height: =118
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =2
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        Width: =640
+        Y: =1018
+        ZIndex: =7
+
+        Icon17_9 As icon.Home:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Home
+            OnSelect: |-
+                =Switch(
+                   true, 
+                   isAdminList, Navigate(Admin) ,
+                   Navigate(Client)
+                )
+            Tooltip: ="Catalogue"
+            ZIndex: =1
+
+        Icon18_9 As icon.CalendarBlank:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.CalendarBlank
+            OnSelect: =Navigate(OwnBookings)
+            Tooltip: ="Bookings"
+            ZIndex: =2
+
+        Icon19_9 As icon.Person:
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Icon: =Icon.Person
+            OnSelect: =Navigate(StartingPage)
+            Tooltip: ="Profile"
+            ZIndex: =3
+
+    IconRefresh1_5 As icon.Reload:
+        AccessibleLabel: =Self.Tooltip
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =66
+        Icon: =Icon.Reload
+        OnSelect: =Refresh([@bookings])
+        PaddingBottom: =10
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: |
+            =10
+        TabIndex: =0
+        Tooltip: ="Refresh list"
+        Width: =75
+        X: =527
+        Y: =101
+        ZIndex: =8
+

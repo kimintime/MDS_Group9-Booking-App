@@ -1,0 +1,74 @@
+{
+  "0ca4291d-b27e-4c57-b908-9ccda49addf5": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1627/1.0.1627.3238/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://laureauas.sharepoint.com/sites/TeamsMDS-Team9": {
+        "dataSources": {
+          "bookings": {
+            "tableName": "8a48a10b-96a3-4093-a8ad-4a5b02716943"
+          },
+          "Equipment": {
+            "tableName": "c2f56e42-2db8-4290-ab23-3a89890c29ad"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Equipment",
+      "bookings",
+      "AdminList"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "0ca4291d-b27e-4c57-b908-9ccda49addf5"
+  },
+  "178056dd-b9fc-4438-856d-ffd9d94005b6": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1626/1.0.1626.3238/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "178056dd-b9fc-4438-856d-ffd9d94005b6"
+  },
+  "29604736-1531-4a9b-96e5-d2c39b05258c": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1627/1.0.1627.3238/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://laureauas.sharepoint.com/sites/TeamsMDS-Team9": {
+        "dataSources": {
+          "AdminList": {
+            "tableName": "42f7dec3-f307-48d7-b5db-506bff38eb6d"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "AdminList"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "29604736-1531-4a9b-96e5-d2c39b05258c"
+  }
+}
