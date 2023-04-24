@@ -74,7 +74,7 @@ For both client and admin, the booking button disappears of an item is unavailab
 When you tap the Book button on the Item Description screen, you’re taken to the Booking screen. Booking defaults to 14 day blocks of time, and is not editable at this time. You may choose the time of start, and therefore the time that it’s due, by typing on the Calendar drop-down, selecting the date, and then selecting the time from the dropdown below it. Once you’ve selected a time suitable for you, tap on the Book button to book the item. You’re directed to a screen informing you of a successful booking, and then directed to your own bookings.
 
 #### Admin Mode
-When booking in admin mode, you are taken directly to editing that booking. The pencil icon allows you to edit that booking. Admins are not limited by 14 days, and may extend or shorten, or delete any booking made in the app. Tap on the Own Bookings button to see all of your current bookings. 
+When booking in admin mode, you are taken directly to editing that booking. The pencil icon allows you to edit that booking, while the trash can icon allows the admin to remove the booking. As the booking disappears at that point, we recommend setting the item back to available before deleting the booking. If you forget though, you can always go find the item and set it back to available on its description page. Admins are not limited by 14 days, and may extend or shorten bookings, or delete any booking made in the app. Tap on the Own Bookings button to see all of your own current bookings. 
 
 ---
 
@@ -87,7 +87,7 @@ Setting an item as Available, either in the Item Page or in the Booking is essen
 The list of your own bookings is not editable, but they should all be on this list. To modify a booking, contact the administrators. If you’re not seeing your bookings, tap the  refresh icon before contacting the administrators.
 
 #### Admin Mode
-The initial view of your own bookings is much the same, however tap the Admin bookings button to view and edit all bookings in the system. When editing a booking, you might need to navigate away from the screen and back, if the page is not showing an update, or appears frozen during update, but you should find that updating and deleting bookings works as expected.
+The initial view of your own bookings is much the same, however tap the Admin bookings button to view and edit all bookings in the system. You can browse the bookings by scrolling through, but to edit a booking, select it from the dropdown menu. When editing a booking, you might need to navigate away from the screen and back to, if the page is not showing an update, or appears frozen during update, but you should find that updating and deleting bookings works as expected.
 
 ## About Admin Mode
 Admins are recognized according to the UserRoles list. To add or remove an admin, the list needs to be manually updated.
