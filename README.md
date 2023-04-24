@@ -45,7 +45,7 @@ In our iteration we added:
 Whether a normal user or admin, you’re greeted with the same front page. The login system is connected to your Laurea account, so it should always be you, but there is the option to logout and try again. Tap on the grey dialogue box showing your name and profile picture to continue into the booking system.
 
 <p align="center">
-  <img width="401" alt="Screenshot 2023-04-24 at 23 37 23" src="https://user-images.githubusercontent.com/40215472/234111209-2e523cc9-1489-4f04-9eda-a1f8842a6f49.png">
+  <img width="403" alt="Screenshot 2023-04-25 at 0 43 32" src="https://user-images.githubusercontent.com/40215472/234123480-0b399cfa-346e-4af8-a994-3f2d05b18cf2.png">
 </p>
 
 ### Browse Items
