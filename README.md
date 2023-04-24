@@ -73,7 +73,7 @@ At the bottom of every screen is the ability to navigate between the items list 
 ---
 
 ### Item Description
-Taping on a given item takes you to that item’s description page, where you can learn more about it, check its availability, and book the item. If the item is not available, you can see the due date for its expected return.
+Taping on a given item takes you to that item’s description page, where you can learn more about it, check its availability, and book the item. If the item is not available, you can see the due date for its expected return. To navigate from the Item Description screen, either tap the back button on the top bar, or as in the rest of the app, use the navbar at the bottom of the screen.
 
 <p align="center">
   <img width="403" alt="Screenshot 2023-04-25 at 0 18 41" src="https://user-images.githubusercontent.com/40215472/234119469-3bf37ae8-9f23-430c-b36a-6688c45cad07.png">
