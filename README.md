@@ -17,13 +17,14 @@ When the project fell into our hands it had the following features:
 - Viewing individual items
 - Making a booking landing the user on a success page
 - The required Equipment and Bookings list
+- Search and sort of items
 
 In our iteration we added:
 
 - User authentication and authorization
 - User roles (admin and client)
 - The User list that goes with the above
-- Search and sort of items
+- Search and sort of Bookings
 - Showing item availability
 - Automated setting of item availability at booking
 - Showing own bookings
